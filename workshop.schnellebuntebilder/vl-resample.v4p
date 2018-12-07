@@ -1,0 +1,145 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.dtd" >
+   <PATCH nodename="C:\Users\IEUser\Desktop\vvvv.patches\vl-resample.v4p" systemname="vl-resample" filename="C:\Users\IEUser\Desktop\vvvv.patches\vl-resample.v4p" locked="0">
+   <BOUNDS type="Window" left="2723" top="1981" width="8995" height="7973">
+   </BOUNDS>
+   <NODE systemname="Resample (Value Stateless)" filename="vl\VVVV.Value.Resample.vl" nodename="Resample (Value Stateless)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="4669" top="2653" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Resample count" visible="1" slicecount="14" values="-0.857142857142857,0.424533745041117,-0.571428571428571,-0.366148727945983,-0.285714285714286,-0.487835733918473,0,0.350686109159142,0.285714285714286,0.469730079872534,0.571428571428571,0.40537566319108,0.857142857142857,-0.423008005833253">
+   </PIN>
+   <PIN pinname="SpreadXY" visible="1">
+   </PIN>
+   <PIN pinname="Output Bin Size" visible="1">
+   </PIN>
+   <PIN pinname="OutputXY" visible="1">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="38.0.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="994" top="4025" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="994" top="4025" width="3731" height="3276">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7504" top="4249" width="5411" height="4417">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="994" top="3493" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.94.6-g1deafadb88\vvvv\nodes\modules\DX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="980" top="2905" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="3" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Point (DX9 2d)" filename="%VVVV%\lib\nodes\modules\EX9\Point (DX9 2d).v4p" nodename="Point (DX9 2d)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="2338" top="2905" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="3" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="3038" top="1841" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3024" top="1379" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" visible="1" values="7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="6" dstpinname="X">
+   </LINK>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="4830" top="1421" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" visible="1" values="7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="6" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="XY" dstnodeid="5" dstpinname="XY">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Node" left="3990" top="581" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3990" top="581" width="693" height="210">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Count">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="XY" dstnodeid="1" dstpinname="SpreadXY">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="11">
+   <BOUNDS type="Node" left="4690" top="2079" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4690" top="2079" width="693" height="210">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="74">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Resample count">
+   </LINK>
+   <NODE systemname="Point (DX9 2d)" filename="%VVVV%\lib\nodes\modules\EX9\Point (DX9 2d).v4p" nodename="Point (DX9 2d)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="4102" top="3185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1" slicecount="2" values="0,0">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|0.89837,0.65256,0.65256,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="3" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="OutputXY" dstnodeid="12" dstpinname="XY">
+   </LINK>
+   </PATCH>
