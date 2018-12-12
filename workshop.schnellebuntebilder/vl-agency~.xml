@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\Development\vvvv\patches\learning\vl\agency.v4p" systemname="agency" filename="C:\Development\vvvv\patches\learning\vl\agency.v4p" scrollx="0" scrolly="-360">
-   <BOUNDS type="Window" left="8295" top="1680" width="10785" height="10785">
+   <PATCH nodename="C:\Users\gs\git\vvvv\vvvv.patches\workshop.schnellebuntebilder\vl-agency.v4p" systemname="agency" filename="C:\Development\vvvv\patches\learning\vl\agency.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="4980" top="2055" width="7830" height="10785">
    </BOUNDS>
    <NODE systemname="Mouse (Devices Window)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Mouse (Devices Window)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1290" top="720" width="100" height="100">
@@ -9,13 +9,15 @@
    </BOUNDS>
    <PIN pinname="Device" visible="1">
    </PIN>
+   <PIN pinname="Left Button" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="1">
    <BOUNDS type="Node" left="1320" top="3495" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1320" top="3495" width="6765" height="4725">
+   <BOUNDS type="Box" left="1320" top="3495" width="4860" height="4830">
    </BOUNDS>
-   <BOUNDS type="Window" left="5415" top="3420" width="12180" height="9660">
+   <BOUNDS type="Window" left="9045" top="3705" width="12180" height="9660">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -25,7 +27,17 @@
    </PIN>
    <PIN pinname="Clear Depth Buffer" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Clear" slicecount="1" visible="1" values="1">
+   <PIN pinname="Clear" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Background Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,0.36318|">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D16">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Fullscreen" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="2">
@@ -33,7 +45,7 @@
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Layer 1" visible="1">
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
@@ -50,7 +62,13 @@
    <PIN pinname="Colors" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Point (DX9 2d)" filename="%VVVV%\lib\nodes\modules\EX9\Point (DX9 2d).v4p" nodename="Point (DX9 2d)" componentmode="Hidden" id="4">
+   <PACK Name="addonpack" Version="38.0.0">
+   </PACK>
+   <LINK srcnodeid="0" srcpinname="Device" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <NODE id="4" componentmode="Hidden" systemname="Point (DX9 2d)" filename="%VVVV%\lib\nodes\modules\EX9\Point (DX9 2d).v4p" nodename="Point (DX9 2d)">
+   <BOUNDS type="Window" left="9405" top="5775" width="13995" height="6180">
+   </BOUNDS>
    <BOUNDS type="Node" left="1320" top="2400" width="1530" height="270">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
@@ -61,17 +79,61 @@
    </PIN>
    <PIN pinname="Inner Radius" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="SizeXY" slicecount="2" values="0.26,0.26">
+   <PIN pinname="SizeXY" slicecount="2" values="0.24,0.24" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 1">
-   </LINK>
-   <PACK Name="addonpack" Version="38.0.0">
-   </PACK>
-   <LINK srcnodeid="0" srcpinname="Device" dstnodeid="3" dstpinname="Input">
+   <LINK srcnodeid="3" srcpinname="Colors" dstnodeid="4" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="3" srcpinname="PositionsXY" dstnodeid="4" dstpinname="XY">
    </LINK>
-   <LINK srcnodeid="3" srcpinname="Colors" dstnodeid="4" dstpinname="Color">
+   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 1">
    </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6">
+   <BOUNDS type="Box" left="2655" top="1500" width="765" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2655" top="1500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.01,0.01">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="4" dstpinname="SizeXY">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7">
+   <BOUNDS type="Box" left="4305" top="1740" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4305" top="1740" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Clear">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="8">
+   <BOUNDS type="Box" left="4980" top="1770" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4980" top="1770" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,0.36318|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
    </PATCH>
