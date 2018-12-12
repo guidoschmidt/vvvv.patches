@@ -1,0 +1,171 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\patches\learning\prototyping-interfaces\arduino\3.7-firmata.v4p" locked="0" systemname="3.7-firmata" filename="C:\Development\vvvv\patches\learning\prototyping-interfaces\arduino\3.7-firmata.v4p" scrollx="1230" scrolly="-360">
+   <BOUNDS type="Window" left="6495" top="4245" width="13755" height="9180">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="FirmataBoard (Devices)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.79.17-g63a3d4ba77\vvvv\nodes\modules\FirmataBoard (Devices).v4p" nodename="FirmataBoard (Devices)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="5670" top="5295" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Port Name" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Pin Values" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="45">
+   <BOUNDS type="Box" left="7200" top="4320" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7200" top="4320" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="46">
+   <BOUNDS type="Box" left="6360" top="3600" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6360" top="3600" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM3">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM1">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="46" srcpinname="Output Enum" dstnodeid="44" dstpinname="Port Name">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="47">
+   <BOUNDS type="Box" left="6600" top="3960" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6600" top="3960" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Reset">
+   </LINK>
+   <NODE systemname="AnalogWrite (Firmata)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.79.17-g63a3d4ba77\vvvv\nodes\vl\VVVV.Devices.Firmata.vl" nodename="AnalogWrite (Firmata)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="4710" top="3180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Index" slicecount="1" values="3" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" visible="1" values="0.381107215769589">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="48" srcpinname="Output" dstnodeid="44" dstpinname="Pin Values">
+   </LINK>
+   <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="4710" top="2370" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="-0.894104692719374">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Shape" slicecount="1" values="Sine">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="4725" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="52" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="56">
+   <BOUNDS type="Node" left="4770" top="900" width="4455" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4770" top="900" width="4605" height="315">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|In Arduino IDE: File &gt; Examples &gt; Firmata &gt; StandardFirmata|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="57">
+   <BOUNDS type="Node" left="4695" top="390" width="1080" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4695" top="390" width="4275" height="615">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|3.7 - Firmata|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|PragmataPro Mono Liga|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="58">
+   <BOUNDS type="Box" left="5880" top="2370" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5880" top="2370" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="PIN">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="58" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Index">
+   </LINK>
+   <NODE systemname="DeNiro (Animation)" nodename="DeNiro (Animation)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="2580" top="2355" width="1950" height="270">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="59" dstpinname="Go To Position">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Position Out" dstnodeid="48" dstpinname="Value">
+   </LINK>
+   </PATCH>

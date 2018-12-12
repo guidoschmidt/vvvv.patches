@@ -1,0 +1,243 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\2.15-filter.v4p" scrollx="1020" scrolly="0" systemname="2.15-filter" filename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\2.15-filter.v4p">
+   <BOUNDS type="Window" left="4545" top="4095" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="9480" top="4830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1" slicecount="1" values="-0.09711071787981">
+   </PIN>
+   <PIN pinname="FilterTime" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Oscillator (Animation)" nodename="Oscillator (Animation)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="11025" top="4830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="FilterTime" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1" slicecount="1" values="-0.09711071787981">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LinearFilter (Animation)" nodename="LinearFilter (Animation)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="12615" top="4815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="FilterTime" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1" slicecount="1" values="-0.09711071787981">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="12855" top="3390" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12855" top="3390" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Filter Time|">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="2" dstpinname="FilterTime" linkstyle="Bezier">
+   <LINKPOINT x="12890" y="4200">
+   </LINKPOINT>
+   <LINKPOINT x="11215" y="4230">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="3" dstpinname="FilterTime" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="1" dstpinname="FilterTime" linkstyle="Bezier">
+   <LINKPOINT x="12890" y="4200">
+   </LINKPOINT>
+   <LINKPOINT x="9700" y="4230">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="5">
+   <BOUNDS type="Node" left="7590" top="7785" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7590" top="7785" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="15720" top="4830" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Damped">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="7740" top="6585" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="TranslateX" visible="1" slicecount="1" values="-0.315068483352661">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1" slicecount="2" values="-0.303849321043105,0.158517741947006">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1" slicecount="1" values="-0.31506848332292">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="7590" top="7215" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Layer" dstnodeid="5" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="9" dstpinname="Transform">
+   </LINK>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="Mouse (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Mouse (Devices Desktop)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="9330" top="2790" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9330" top="2790" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Position (Projection) XY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Unzip (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Value)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="9480" top="3405" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9480" top="3405" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Position (Projection) XY" dstnodeid="14" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output 1" dstnodeid="1" dstpinname="Go To Position" linkstyle="VHV">
+   <LINKPOINT x="9560" y="4230">
+   </LINKPOINT>
+   <LINKPOINT x="9445" y="4260">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output 1" dstnodeid="2" dstpinname="Go To Position" linkstyle="Bezier">
+   <LINKPOINT x="9605" y="4223">
+   </LINKPOINT>
+   <LINKPOINT x="10945" y="4253">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output 1" dstnodeid="3" dstpinname="Go To Position" linkstyle="Bezier">
+   <LINKPOINT x="9605" y="4215">
+   </LINKPOINT>
+   <LINKPOINT x="12550" y="4245">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="17">
+   <BOUNDS type="Node" left="10485" top="7770" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10485" top="7770" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="15720" top="4830" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="10635" top="6570" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="TranslateX" visible="1" slicecount="1" values="-0.315068483352661">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1" slicecount="2" values="-0.303849321043105,0.158517741947006">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1" slicecount="1" values="-0.31506848332292">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="10485" top="7200" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Layer" dstnodeid="17" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Transform Out" dstnodeid="15" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="20">
+   <BOUNDS type="Node" left="13605" top="7725" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13605" top="7725" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="15720" top="4830" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="13755" top="6525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="TranslateX" visible="1" slicecount="1" values="-0.315068483352661">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1" slicecount="2" values="-0.303849321043105,0.158517741947006">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1" slicecount="1" values="-0.31506848332292">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="13605" top="7155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="20" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Transform Out" dstnodeid="18" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Position Out" dstnodeid="7" dstpinname="TranslateX" linkstyle="Bezier">
+   <LINKPOINT x="9480" y="5828">
+   </LINKPOINT>
+   <LINKPOINT x="7965" y="5828">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Position Out" dstnodeid="16" dstpinname="TranslateX" linkstyle="Bezier">
+   <LINKPOINT x="11040" y="5820">
+   </LINKPOINT>
+   <LINKPOINT x="10830" y="5820">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Position Out" dstnodeid="19" dstpinname="TranslateX" linkstyle="Bezier">
+   <LINKPOINT x="12675" y="5798">
+   </LINKPOINT>
+   <LINKPOINT x="13920" y="5798">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Position Out" dstnodeid="16" dstpinname="TranslateY" linkstyle="Bezier">
+   <LINKPOINT x="11040" y="5820">
+   </LINKPOINT>
+   <LINKPOINT x="10995" y="5820">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Position Out" dstnodeid="7" dstpinname="TranslateY" linkstyle="Bezier">
+   <LINKPOINT x="9465" y="5835">
+   </LINKPOINT>
+   <LINKPOINT x="8130" y="5835">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Position Out" dstnodeid="19" dstpinname="TranslateY" linkstyle="Bezier">
+   <LINKPOINT x="12675" y="5790">
+   </LINKPOINT>
+   <LINKPOINT x="14085" y="5790">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

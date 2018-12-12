@@ -1,0 +1,215 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\patches\learning\prototyping-interfaces\2.22-feedback-loop.v4p" scrollx="0" scrolly="0" systemname="2.22-feedback-loop" filename="C:\Development\vvvv\patches\learning\prototyping-interfaces\2.22-feedback-loop.v4p">
+   <BOUNDS type="Window" left="8100" top="4875" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="3495" top="6900" width="1830" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="8040" top="4125" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8040" top="4125" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Reset">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="6780" top="5085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" visible="1" values="0.0167">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3495" top="6300" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3495" top="6300" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Summand A|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3480" top="7995" width="960" height="1695">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3480" top="7995" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="7" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="5280" top="5775" width="1575" height="270">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Sample &amp; Hold|">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0.945530781202251">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Value)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="5715" top="7995" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5715" top="7995" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Initialize" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="10" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="3555" y="7568">
+   </LINKPOINT>
+   <LINKPOINT x="5715" y="7568">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5880" top="8400" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5880" top="8400" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Sum">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output 1" dstnodeid="11" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Reset" linkstyle="VHV">
+   <LINKPOINT x="8105" y="4823">
+   </LINKPOINT>
+   <LINKPOINT x="7300" y="4838">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Initialize" linkstyle="VHV">
+   <LINKPOINT x="8040" y="6293">
+   </LINKPOINT>
+   <LINKPOINT x="6585" y="6293">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="0" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5460" top="6300" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5460" top="6300" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Summand B|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="12" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output 1" dstnodeid="9" dstpinname="Input">
+   <LINKPOINT x="5730" y="9360">
+   </LINKPOINT>
+   <LINKPOINT x="9825" y="9360">
+   </LINKPOINT>
+   <LINKPOINT x="9825" y="8460">
+   </LINKPOINT>
+   <LINKPOINT x="9480" y="8190">
+   </LINKPOINT>
+   <LINKPOINT x="10050" y="8190">
+   </LINKPOINT>
+   <LINKPOINT x="9750" y="7890">
+   </LINKPOINT>
+   <LINKPOINT x="9750" y="3525">
+   </LINKPOINT>
+   <LINKPOINT x="5295" y="3525">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6795" top="4305" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6795" top="4305" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.0167">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Period">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="14">
+   <BOUNDS type="Node" left="6630" top="3960" width="1155" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6630" top="3960" width="1155" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|1/60s = 60fps|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="15">
+   <BOUNDS type="Node" left="3495" top="2445" width="1650" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3495" top="2445" width="5250" height="720">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|2.22 - Feedback Loop|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|PragmataPro Mono Liga|">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="20">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Change" dstnodeid="9" dstpinname="Set">
+   </LINK>
+   </PATCH>

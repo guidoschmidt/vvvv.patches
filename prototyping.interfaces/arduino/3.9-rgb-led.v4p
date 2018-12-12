@@ -1,0 +1,161 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha36.1.dtd" >
+   <PATCH nodename="C:\Development\vvvv\patches\learning\prototyping-interfaces\arduino\3.9-rgb-led.v4p" scrollx="0" scrolly="-360" systemname="3.9-rgb-led" filename="C:\Development\vvvv\patches\learning\prototyping-interfaces\arduino\3.9-rgb-led.v4p">
+   <BOUNDS type="Window" left="8100" top="4875" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="FirmataBoard (Devices)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.91.132-g063fae3f8c\vvvv\nodes\modules\FirmataBoard (Devices).v4p" nodename="FirmataBoard (Devices)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="9960" top="7620" width="2595" height="270">
+   </BOUNDS>
+   <PIN pinname="Connected" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Port Name" visible="1">
+   </PIN>
+   <PIN pinname="Pin Values" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="12180" top="8715" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12180" top="8715" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Connected" dstnodeid="1" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="13005" top="6375" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13005" top="6375" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="3" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="11490" top="5970" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11490" top="5970" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM3">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM1">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Enum" dstnodeid="0" dstpinname="Port Name">
+   </LINK>
+   <NODE systemname="AnalogWrite (Firmata)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.91.132-g063fae3f8c\vvvv\nodes\vl\VVVV.Devices.Firmata.vl" nodename="AnalogWrite (Firmata)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="6480" top="6135" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Index" slicecount="1" values="9">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (Firmata)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.91.132-g063fae3f8c\vvvv\nodes\vl\VVVV.Devices.Firmata.vl" nodename="Cons (Firmata)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="8130" top="7050" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AnalogWrite (Firmata)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.91.132-g063fae3f8c\vvvv\nodes\vl\VVVV.Devices.Firmata.vl" nodename="AnalogWrite (Firmata)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="7650" top="6120" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Index" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" visible="1" values="0.1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AnalogWrite (Firmata)" filename="%VVVV%\lib\packs\VL.IO.Firmata.0.91.132-g063fae3f8c\vvvv\nodes\vl\VVVV.Devices.Firmata.vl" nodename="AnalogWrite (Firmata)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="8895" top="6120" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Index" slicecount="1" values="11">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="5" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="5" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="5" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="0" dstpinname="Pin Values">
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="8">
+   <BOUNDS type="Node" left="6750" top="3705" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6750" top="3705" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   <PIN pinname="Color Input" slicecount="1" values="|0.04106,0.00000,0.44433,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="RGB (Color Split)" nodename="RGB (Color Split)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="6810" top="4515" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Blue" visible="1">
+   </PIN>
+   <PIN pinname="Red" visible="1">
+   </PIN>
+   <PIN pinname="Green" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Color Output" dstnodeid="9" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="7605" top="5595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="6" dstpinname="Value">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Blue" dstnodeid="10" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Red" dstnodeid="4" dstpinname="Value">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Green" dstnodeid="7" dstpinname="Value">
+   </LINK>
+   </PATCH>

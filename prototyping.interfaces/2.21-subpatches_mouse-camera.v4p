@@ -1,0 +1,101 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\patches\learning\prototyping-interfaces\2.21-subpatches_mouse-camera.v4p" systemname="2.21-subpatches_mouse-camera" filename="C:\Development\vvvv\patches\learning\prototyping-interfaces\2.21-subpatches_mouse-camera.v4p">
+   <NODE id="0" systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1530" top="3480" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial Distance" visible="1">
+   </PIN>
+   <PIN pinname="Initial Longitude" visible="1">
+   </PIN>
+   <PIN pinname="Initial Latitude" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="1" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2010" top="3120" width="840" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2010" top="3120" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Distance">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="Mouse (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Mouse (Devices Desktop)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1500" top="1500" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1500" top="1500" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Position (Projection) XY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="3" systemname="Unzip (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Value)" componentmode="Hidden">
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <BOUNDS type="Node" left="1680" top="2010" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1680" top="2010" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output 1" dstnodeid="0" dstpinname="Initial Longitude" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output 2" dstnodeid="0" dstpinname="Initial Latitude" linkstyle="VHV">
+   <LINKPOINT x="2110" y="2880">
+   </LINKPOINT>
+   <LINKPOINT x="1880" y="2880">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Initial Distance">
+   </LINK>
+   <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="View">
+   </PIN>
+   <BOUNDS type="Box" left="1530" top="4080" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1530" top="4080" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="View" dstnodeid="4" dstpinname="Input Node">
+   </LINK>
+   <NODE id="5" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
+   </PIN>
+   <BOUNDS type="Box" left="2430" top="4080" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2430" top="4080" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Projection" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Position (Projection) XY" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <NODE id="6" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Output 1|">
+   </PIN>
+   <BOUNDS type="Box" left="3330" top="4080" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3330" top="4080" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output 1" dstnodeid="6" dstpinname="Y Input Value">
+   </LINK>
+   <BOUNDS type="Window" left="14160" top="2850" width="3510" height="5070">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <INFO author="Guido Schmidt" description="Mouse Controlled Camera" tags="">
+   </INFO>
+   </PATCH>

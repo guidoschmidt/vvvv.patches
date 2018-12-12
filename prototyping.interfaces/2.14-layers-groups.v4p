@@ -1,0 +1,221 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\layers-groups.v4p" systemname="layers-groups" filename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\layers-groups.v4p" scrollx="1050" scrolly="0">
+   <BOUNDS type="Window" left="8265" top="1590" width="13590" height="12915">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="0">
+   <BOUNDS type="Node" left="1950" top="7035" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1950" top="7035" width="5610" height="4290">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12840" top="4410" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.99816,1.00000,0.93708,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="4935" top="4050" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="7080" top="4050" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="9180" top="4050" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="5715" top="5640" width="3225" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="4" dstpinname="Layer 1" linkstyle="Bezier">
+   <LINKPOINT x="4995" y="4980">
+   </LINKPOINT>
+   <LINKPOINT x="5715" y="4980">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="4" dstpinname="Layer 2" linkstyle="Bezier">
+   <LINKPOINT x="7095" y="4973">
+   </LINKPOINT>
+   <LINKPOINT x="6795" y="4973">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="4" dstpinname="Layer 3" linkstyle="Bezier">
+   <LINKPOINT x="9165" y="4965">
+   </LINKPOINT>
+   <LINKPOINT x="7890" y="4965">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="5">
+   <BOUNDS type="Box" left="4635" top="1920" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4635" top="1920" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.97327,0.36869,0.00000,0.96564|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Color Output" dstnodeid="1" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="4695" y="3218">
+   </LINKPOINT>
+   <LINKPOINT x="5895" y="3218">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="6">
+   <BOUNDS type="Box" left="7095" top="1920" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7095" top="1920" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.89702,0.78326,0.50427|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Color Output" dstnodeid="2" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="7155" y="3218">
+   </LINKPOINT>
+   <LINKPOINT x="8040" y="3218">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="7">
+   <BOUNDS type="Box" left="9570" top="1920" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9570" top="1920" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.22106,0.00000,0.61669,0.49853|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Color Output" dstnodeid="3" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="9655" y="3238">
+   </LINKPOINT>
+   <LINKPOINT x="10100" y="3228">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="0" dstpinname="Layers" linkstyle="PolyLine">
+   </LINK>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="9" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4770" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="10" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="7125" top="3180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="1" values="-0.49">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="11" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="9285" top="3180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="1" values="0.46">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Transform Out" dstnodeid="3" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="2" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Group (EX9 Priority)" nodename="Group (EX9 Priority)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="9180" top="5640" width="4200" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Priority 1" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Priority 2" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Priority 3" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 1" linkstyle="Bezier">
+   <LINKPOINT x="4995" y="4965">
+   </LINKPOINT>
+   <LINKPOINT x="9180" y="4965">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 2" linkstyle="Bezier">
+   <LINKPOINT x="7140" y="4965">
+   </LINKPOINT>
+   <LINKPOINT x="10560" y="4965">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 3" linkstyle="Bezier">
+   <LINKPOINT x="9240" y="4965">
+   </LINKPOINT>
+   <LINKPOINT x="11940" y="4965">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="8280" top="7050" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8280" top="7050" width="5610" height="4290">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12840" top="4410" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.99816,1.00000,0.93708,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="13" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="14">
+   <BOUNDS type="Node" left="9210" top="5985" width="4035" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9210" top="5985" width="2130" height="810">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Group (Priority) lets you specify the order of the layers|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>

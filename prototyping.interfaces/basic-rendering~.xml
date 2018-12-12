@@ -1,0 +1,189 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\basic-rendering.v4p" scrollx="0" scrolly="1530" systemname="basic-rendering" filename="C:\Development\vvvv\vvvv_50beta36_x64\patches\learning\prototyping-interfaces\basic-rendering.v4p">
+   <BOUNDS type="Window" left="6795" top="2115" width="15885" height="11955">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="0">
+   <BOUNDS type="Node" left="1710" top="6180" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1710" top="6180" width="2910" height="2190">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7215" top="9750" width="4710" height="7035">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1725" top="5595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="5685" top="3330" width="915" height="270">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Render State Out" dstnodeid="1" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="5410" y="4608">
+   </LINKPOINT>
+   <LINKPOINT x="2060" y="4558">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="9">
+   <BOUNDS type="Node" left="9795" top="6180" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9795" top="6180" width="3030" height="2130">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13005" top="6660" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Grid (DX9)" nodename="Grid (DX9)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="9795" top="5475" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="9" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="5580" top="6150" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5580" top="6150" width="3060" height="2310">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13350" top="5655" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="5565" top="5520" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Resolution" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Layer" dstnodeid="13" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Render State Out" dstnodeid="15" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="5440" y="4585">
+   </LINKPOINT>
+   <LINKPOINT x="5855" y="4535">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Render State Out" dstnodeid="11" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="5470" y="4548">
+   </LINKPOINT>
+   <LINKPOINT x="10070" y="4498">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="16">
+   <BOUNDS type="Node" left="11220" top="4365" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11220" top="4365" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Resolution Y">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Resolution X">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="17">
+   <BOUNDS type="Node" left="11205" top="4680" width="900" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11205" top="4680" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="Resolution">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="18">
+   <BOUNDS type="Node" left="7140" top="4815" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7140" top="4815" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="6">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Resolution">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="20">
+   <BOUNDS type="Node" left="7125" top="5100" width="900" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7125" top="5100" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="Resolution">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="3690" top="8745" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Transform Out" dstnodeid="0" dstpinname="Projection">
+   <LINKPOINT x="3705" y="9420">
+   </LINKPOINT>
+   <LINKPOINT x="4950" y="9420">
+   </LINKPOINT>
+   <LINKPOINT x="4965" y="5940">
+   </LINKPOINT>
+   <LINKPOINT x="4305" y="5925">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Actual Backbuffer Width" dstnodeid="22" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Actual Backbuffer Height" dstnodeid="22" dstpinname="Aspect Height">
+   </LINK>
+   </PATCH>
