@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="B2MuCB5cXszQMNHeRlMrrG" Version="0.93">
+  <Patch Id="IAm0pIiiF1JMaRW0KUmIiG">
+    <Canvas Id="FyChB3jvjyBQcKXFPABt4e" DefaultCategory="VVVV.Value" BordersChecked="false" CanvasType="FullCategory">
+      <Canvas Id="EdilbqOedovOEK77VormzQ" Name="Group" Position="156,218" DefaultCategory="VVVV.Value" CanvasType="Group" />
+    </Canvas>
+  </Patch>
+  <NugetDependency Id="STqyDsw0nhNMKCD9hWZVIK" Location="VL.CoreLib" Version="0.38.804-gc102d47f36" />
+  <NugetDependency Id="IlXR6HShJgvQOngghntaU8" Location="VL.CoreLib.VVVV" Version="0.38.1041-g7fa46df817" />
+</Document>
