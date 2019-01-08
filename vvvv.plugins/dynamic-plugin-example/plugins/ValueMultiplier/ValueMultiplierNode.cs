@@ -13,19 +13,16 @@ using VVVV.Core.Logging;
 namespace VVVV.Nodes
 {
 	#region PluginInfo
-	[PluginInfo(Name         = "MyPlugin", 
-              Category     = "Value",
-              Help         = "C# plugin to illustrate dynamic vvvv plugins",
-              Tags         = "learn, basics",
-              Author       = "Guido Schmidt"
-              AutoEvaluate = false)]
+	[PluginInfo(Name = "Multiplier", Category = "Value")]
 	#endregion PluginInfo
-
-  public class ValueMyPluginNode : IPluginEvaluate
+	public class ValueMultiplierNode : IPluginEvaluate
 	{
 		#region fields & pins
 		[Input("Input", DefaultValue = 1.0)]
 		public ISpread<double> FInput;
+
+    [Input("Multiplier", DefaultValue = 2.0)]
+		public ISpread<double> FMultiplier;
 
 		[Output("Output")]
 		public ISpread<double> FOutput;
@@ -38,8 +35,11 @@ namespace VVVV.Nodes
 		public void Evaluate(int SpreadMax)
 		{
 			FOutput.SliceCount = SpreadMax;
+
 			for (int i = 0; i < SpreadMax; i++)
-				FOutput[i] = FInput[i] * 2;
+				FOutput[i] = FInput[i] * FMultiplier[i];
+
+			//FLogger.Log(LogType.Debug, "hi tty!");
 		}
 	}
 }
